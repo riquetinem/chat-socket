@@ -28,6 +28,7 @@ public class SocketClient {
                     } catch (IOException ex) {
                         System.out.println("Impossivel ler a mensagem do servidor");
                         ex.printStackTrace();
+                        
                     }
 
                 }

@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/SocketClient.java</file>
-            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/GerenciadorDeClientes.java</file>
-            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/SocketServer.java</file>
+            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/Server.java</file>
+            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/Cliente.java</file>
+            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/Constants.java</file>
+            <file>file:/C:/Users/henri/Documents/NetBeansProjects/chat-socket/src/ClienteView.java</file>
         </group>
     </open-files>
 </project-private>

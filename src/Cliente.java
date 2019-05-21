@@ -36,10 +36,14 @@ public class Cliente extends Thread {
 
                 if (msg.startsWith(Constants.MENSAGEM)) {
                     String nomeDestinario = msg.substring(Constants.MENSAGEM.length(), msg.length());
-                    System.out.println("enviando para " + nomeDestinario);
                     Cliente destinario = clientes.get(nomeDestinario);
 
-                    destinario.getEscritor().println(this.nomeCliente + ": " + leitor.readLine());
+                    System.out.println("");
+
+                    if (destinario != null) {
+                        System.out.println("enviando para " + nomeDestinario);
+                        destinario.getEscritor().println(this.nomeCliente + ": " + leitor.readLine());
+                    }
 
                     // lista o nome de todos os clientes logados
                 } else if (msg.equals(Constants.LISTA_USUARIOS)) {
@@ -61,7 +65,7 @@ public class Cliente extends Thread {
         while (true) {
             escritor.println(Constants.LOGIN);
             this.nomeCliente = leitor.readLine().toLowerCase().replaceAll(",", "");
-            if (this.nomeCliente.equalsIgnoreCase("null") || this.nomeCliente.isEmpty()) {
+            if (this.nomeCliente.equalsIgnoreCase(null) || this.nomeCliente.isEmpty()) {
                 escritor.println(Constants.LOGIN_NEGADO);
             } else if (clientes.containsKey(this.nomeCliente)) {
                 escritor.println(Constants.LOGIN_NEGADO);
@@ -88,7 +92,7 @@ public class Cliente extends Thread {
             str.append(",");
         }
         if (str.length() > 0) {
-            str.delete(str.length() - 1, str.length());
+            str.delete(str.length(), str.length());
         }
         cliente.getEscritor().println(Constants.LISTA_USUARIOS);
         cliente.getEscritor().println(str.toString());
@@ -101,8 +105,4 @@ public class Cliente extends Thread {
     public String getNomeCliente() {
         return nomeCliente;
     }
-
-//	public BufferedReader getLeitor() {
-//		return leitor;
-//	}
 }

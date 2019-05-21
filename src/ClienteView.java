@@ -25,7 +25,7 @@ public class ClienteView extends javax.swing.JFrame {
 
         txaMsg.requestFocus();
 
-        String[] usuarios = new String[]{""};
+        String[] usuarios = new String[]{};
         preencherListaUsuarios(usuarios);
     }
 
@@ -84,7 +84,7 @@ public class ClienteView extends javax.swing.JFrame {
                 txaChat.append(txaMsg.getText());
                 txaChat.append("\n");
 
-                String[] usuariosLista = new String[50];
+                String[] usuariosLista = new String[10];
 
                 for (int i = 0; i < jltUsuarios.getModel().getSize(); i++) {
                     usuariosLista[i] = String.valueOf(jltUsuarios.getModel().getElementAt(i));
@@ -102,7 +102,7 @@ public class ClienteView extends javax.swing.JFrame {
     public void sendToAll(String[] usuarios, String msg) {
         for (String usuario : usuarios) {
             escritor.println(Constants.MENSAGEM + usuario);
-            escritor.println(txaMsg.getText());
+            escritor.println("[TODOS]" + txaMsg.getText());
         }
     }
 

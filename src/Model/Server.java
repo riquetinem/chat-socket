@@ -1,3 +1,6 @@
+package Model;
+
+import Util.Constants;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,6 +21,7 @@ public class Server {
                 Socket cliente = server.accept();
                 new Cliente(cliente);
             }
+            
         } catch (IOException e) {
             System.err.println("A porta está em uso ou o servidor foi fechado!");
             try {

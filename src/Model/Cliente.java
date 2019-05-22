@@ -1,3 +1,6 @@
+package Model;
+
+import Util.Constants;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,7 +44,6 @@ public class Cliente extends Thread {
                     System.out.println("");
 
                     if (destinario != null) {
-                        System.out.println("enviando para " + nomeDestinario);
                         destinario.getEscritor().println(this.nomeCliente + ": " + leitor.readLine());
                     }
 

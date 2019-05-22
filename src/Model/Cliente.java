@@ -22,9 +22,6 @@ public class Cliente extends Thread {
         start();
     }
 
-    /**
-     *
-     */
     @Override
     public void run() {
         try {
@@ -58,7 +55,6 @@ public class Cliente extends Thread {
         } catch (IOException e) {
             System.err.println("o cliente fechou a conexao");
             clientes.remove(this.nomeCliente);
-            e.printStackTrace();
         }
     }
 
@@ -66,14 +62,14 @@ public class Cliente extends Thread {
 
         while (true) {
             escritor.println(Constants.LOGIN);
-            this.nomeCliente = leitor.readLine().toLowerCase().replaceAll(",", "");
+            this.nomeCliente = leitor.readLine().toUpperCase().replaceAll(",", "");
             if (this.nomeCliente.equalsIgnoreCase(null) || this.nomeCliente.isEmpty()) {
                 escritor.println(Constants.LOGIN_NEGADO);
             } else if (clientes.containsKey(this.nomeCliente)) {
                 escritor.println(Constants.LOGIN_NEGADO);
             } else {
                 escritor.println(Constants.LOGIN_ACEITO);
-                escritor.println("olá " + this.nomeCliente);
+                escritor.println("Bem vindo " + this.nomeCliente);
                 clientes.put(this.nomeCliente, this);
                 for (String cliente : clientes.keySet()) {
                     atualizarListaUsuarios(clientes.get(cliente));

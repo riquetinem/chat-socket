@@ -21,16 +21,15 @@ public class Server {
                 Socket cliente = server.accept();
                 new Cliente(cliente);
             }
-            
+
         } catch (IOException e) {
-            System.err.println("A porta está em uso ou o servidor foi fechado!");
+            JOptionPane.showMessageDialog(null, "A porta está em uso ou o servidor já foi iniciado");
             try {
                 if (server != null) {
                     server.close();
                 }
             } catch (IOException ex) {
             }
-            e.printStackTrace();
         }
     }
 }
